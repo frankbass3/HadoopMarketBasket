@@ -89,12 +89,14 @@ public class MarketBasketSupportConfidence {
 			}
 			else {
 				float sum = 0;
+				float sum2 = 0;
 				float freqRule = 0;
 				for (Text val : values) {
 					sum = sum + Integer.parseInt(val.toString());
+					sum2 = sum2 + Integer.parseInt(val.toString());
 				}
 				sum = (float) ((float)sum / NumberOfLinesInFile)*100;
-				freqRule = (float) ((float)sum);
+				freqRule = (float) ((float)sum2);
 				result = new Text(String.valueOf(sum) + "-" +freqRule);
 				context.write(key, result);
 			}
